@@ -580,18 +580,20 @@ class Information
     {
         // Placeholder for layout 4
         // Horizontal ships
-        placeHorizontalShip(1, 1, 5);
-        placeHorizontalShip(4, 8, 5);
-        placeHorizontalShip(7, 3, 5);
-        placeHorizontalShip(10, 9, 5);
-        placeHorizontalShip(13, 2, 5);
+        placeHorizontalShip(1, 2, 5);
+        placeHorizontalShip(4, 7, 5);
+        placeHorizontalShip(7, 10, 5);
+        placeHorizontalShip(9, 6, 5);
+        placeHorizontalShip(11, 4, 5);
+        placeHorizontalShip(13, 6, 5);
        
         // Vertical ships
-        placeVerticalShip(2, 3, 5);
-        placeVerticalShip(5, 6, 5);
-        placeVerticalShip(8, 1, 5);
-        placeVerticalShip(9, 11, 5);
-        placeVerticalShip(2, 13, 5);
+        placeVerticalShip(10, 0, 5);
+        placeVerticalShip(3, 1, 5);
+        placeVerticalShip(9, 2, 5);
+        placeVerticalShip(4, 4, 5);
+        placeVerticalShip(9, 12, 5);
+        placeVerticalShip(1, 13, 5);
     }
     
     // Setup layout 5 ship positions
