@@ -1,0 +1,180 @@
+This invention helped make computers much smaller and faster.  What is it called?
+Vacuum Tube
+Random Access Memory
+Central Processing Unit
+Integrated Circuit
+3
+This man is known for starting the company Microsoft back in the year 1975.  Since then, he has become one of the richest people in the world.  His name is:
+Steve Jobs
+Bill Gates
+Konrad Zuse
+Charles Babbage
+1
+This person created a machine called The Analytical Engine.  His ideas were some of the first that led to the creation of computers.
+Simon Konrad
+Charles Babbage
+John Lovelace
+William Howard
+1
+This invention was 1,000 times faster than any machine built before it.  It was so big that it could fill up a house.
+Apple 1
+ENIAC
+Windows
+Z3
+1
+This person is often called the inventor of the modern computer.  He created the first fully electronic computer.
+Konrad Zuse
+Byron Lovelace
+Bill Gates
+Steve Jobs
+0
+This invention replaced vacuum tubes and made computers smaller and faster.  However, it was eventually replaced by another invention.
+RAM
+ENIAC
+Transformer
+Transistor
+3
+Steve Jobs and Steve Wozniak built their first computer using a wooden box.  Their company has grown and is still around today.  The name of the company is:
+Microsoft
+Linux
+Apple
+Windows
+2
+This person created what is now known as the first computer program.  The program was made to help the Analytical Engine calculate numbers.
+Charles Babbage
+Konrad Apple
+Ada Lovelace
+William Zuse
+2
+Who invented the first computer mouse?
+Tom and Jerry
+Jeff Bezos
+Grace Hopper
+Douglas Engelbart
+3
+The first person to use the term "compiler":
+Grace Hopper
+Charles Lindberg
+James Gosling
+Harry Truman
+0
+Creator of the Python Programming Language:
+Jonathan Winters
+Guido van Rossum
+Blaise Pascal
+George Washington
+1
+Lead Developer for the Java Programming Language, working at Sun Microsystems:
+Cleve Moler
+Genghis Khan
+Robin Williams
+James Gosling
+3
+The BASIC language was first released at this university:
+Harvard
+UC Berkeley
+Temple
+Dartmouth
+3
+An important company that helped to develop early computers is named IBM.  IBM stands for:
+Intellectual Business Model
+International Business Machines
+Inspiration By Meme
+Integrated Building Machines
+1
+The first computer language that was commercially available:
+FORTRAN
+PASCAL
+JAVA
+BASIC
+0
+Some programming languages created since the turn of the 21st century include:
+Go, Rust, and C++
+Scala, Swift, and Dart
+Scratch, Julia, and Python
+C, C++, and C#
+1
+Google was founded by Larry Page and Sergey Brin in:
+1992
+1993
+1995
+1998
+3
+Headquarters for Twitter are in the city of:
+New York, NY
+San Jose, CA
+San Francisco, CA
+Boston, MA
+2
+Steve Wozniak stopped working for Apple in the year:
+1980
+1985
+1990
+1995
+1
+Intel Corporation, which makes computer chips was founded in the year:
+1968
+1973
+1975
+1977
+0
+When the Java Programming Language was first being developed, its project name was:
+Lightning
+Pitbull
+Regal
+Oak
+3
+One of the primary goals of Java, when it was first created, is encapsulated by the phrase:
+"Write Once, Run Anywhere"
+"Here Today, Gone Tomorrow"
+"He Who Hesitates Is Lost"
+"Remember The Alamo"
+0
+The syntax of Java is derived largely from an earlier programming language.  That language is:
+Perl
+Python
+C++
+Swahili
+2
+The name of the advanced graphical user interface library for the Java SE platform is:
+Yeltsin
+Hopscotch
+Wozniak
+Swing
+3
+One of the earliest known tools used for computation was the:
+Calculator
+Abacus
+Gutenberg Bible
+Wheel
+1
+The first working transistor was created at Bell Labs in the year:
+1937
+1947
+1951
+1956
+1
+The term "Nerd" was first used by:
+Steve Jobs
+Isaac Newton
+Woodrow Wilson
+Dr. Seuss
+3
+The Python programming language was named after:
+The family of snakes, Python
+Pie + Thon
+Monty Python's Flying Circus
+Pithy + On
+2
+The Apple Macintosh was first introduced in:
+1978
+1980
+1984
+1987
+2
+This person is considered to be the inventor of the mechanical calculator:
+Blaise Pascal
+Lewis Fry Richardson
+Alan Turing
+James Thomson
+0
