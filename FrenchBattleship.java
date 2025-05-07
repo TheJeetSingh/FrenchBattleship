@@ -561,16 +561,17 @@ class Information
         // Horizontal ships
         placeHorizontalShip(0, 10, 5);
         placeHorizontalShip(3, 3, 5);
-        placeHorizontalShip(5, 0, 5);
-        placeHorizontalShip(7, 7, 5);
-        placeHorizontalShip(9, 2, 5);
-        placeHorizontalShip(10, 10, 5);
+        placeHorizontalShip(7, 6, 5);
+        placeHorizontalShip(9, 4, 5);
+        placeHorizontalShip(10, 11, 5);
+        placeHorizontalShip(13, 7, 5);
         
         // Vertical ships
-        placeVerticalShip(0, 1, 5);
-        placeVerticalShip(2, 2, 5);
-        placeVerticalShip(0, 7, 5);
-        placeVerticalShip(4, 11, 5);
+        placeVerticalShip(1, 0, 5);
+        placeVerticalShip(7, 1, 5);
+        placeVerticalShip(0, 2, 5);
+        placeVerticalShip(10, 4, 5);
+        placeVerticalShip(1, 9, 5);
         placeVerticalShip(3, 13, 5);
     }
     
