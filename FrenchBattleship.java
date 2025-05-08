@@ -622,18 +622,20 @@ class Information
     {
         // Placeholder for layout 6
         // Horizontal ships
-        placeHorizontalShip(3, 2, 5);
-        placeHorizontalShip(6, 8, 5);
-        placeHorizontalShip(9, 1, 5);
-        placeHorizontalShip(12, 7, 5);
-        placeHorizontalShip(14, 13, 5);
+        placeHorizontalShip(0, 10, 5);
+        placeHorizontalShip(1, 1, 5);
+        placeHorizontalShip(2, 8, 5);
+        placeHorizontalShip(4, 7, 5);
+        placeHorizontalShip(7, 9, 5);
+        placeHorizontalShip(13, 2, 5);
         
         // Vertical ships
-        placeVerticalShip(0, 7, 5);
-        placeVerticalShip(2, 11, 5);
-        placeVerticalShip(7, 4, 5);
-        placeVerticalShip(8, 13, 5);
-        placeVerticalShip(10, 1, 5);
+        placeVerticalShip(8, 0, 5);
+        placeVerticalShip(3, 2, 5);
+        placeVerticalShip(2, 4, 5);
+        placeVerticalShip(7, 6, 5);
+        placeVerticalShip(10, 8, 5);
+        placeVerticalShip(9, 11, 5);
     }
     
     // Setup layout 7 ship positions
@@ -641,18 +643,20 @@ class Information
     {
         // Placeholder for layout 7
         // Horizontal ships
-        placeHorizontalShip(1, 5, 5);
-        placeHorizontalShip(4, 9, 5);
+        placeHorizontalShip(1, 10, 5);
+        placeHorizontalShip(3, 8, 5);
+        placeHorizontalShip(5, 5, 5);
         placeHorizontalShip(7, 3, 5);
-        placeHorizontalShip(10, 11, 5);
-        placeHorizontalShip(13, 6, 5);
+        placeHorizontalShip(9, 1, 5);
+        placeHorizontalShip(11, 3, 5);
         
         // Vertical ships
-        placeVerticalShip(2, 2, 5);
-        placeVerticalShip(3, 7, 5);
-        placeVerticalShip(8, 10, 5);
-        placeVerticalShip(9, 5, 5);
-        placeVerticalShip(11, 8, 5);
+        placeVerticalShip(1, 0, 5);
+        placeVerticalShip(10, 0, 5);
+        placeVerticalShip(0, 3, 5);
+        placeVerticalShip(7, 9, 5);
+        placeVerticalShip(6, 11, 5);
+        placeVerticalShip(8, 13, 5);
     }
     
     // Setup layout 8 ship positions
@@ -660,18 +664,20 @@ class Information
     {
         // Placeholder for layout 8
         // Horizontal ships
-        placeHorizontalShip(0, 3, 5);
-        placeHorizontalShip(3, 7, 5);
-        placeHorizontalShip(6, 1, 5);
-        placeHorizontalShip(9, 10, 5);
-        placeHorizontalShip(12, 5, 5);
+        placeHorizontalShip(1, 9, 5);
+        placeHorizontalShip(3, 10, 5);
+        placeHorizontalShip(6, 8, 5);
+        placeHorizontalShip(7, 2, 5);
+        placeHorizontalShip(9, 7, 5);
+        placeHorizontalShip(12, 7, 5);
         
         // Vertical ships
-        placeVerticalShip(1, 1, 5);
-        placeVerticalShip(2, 5, 5);
-        placeVerticalShip(7, 8, 5);
-        placeVerticalShip(8, 12, 5);
-        placeVerticalShip(10, 3, 5);
+        placeVerticalShip(9, 1, 5);
+        placeVerticalShip(1, 3, 5);
+        placeVerticalShip(1, 4, 5);
+        placeVerticalShip(10, 4, 5);
+        placeVerticalShip(0, 7, 5);
+        placeHorizontalShip(10, 13, 5);
     }
     
     // Setup layout 9 ship positions
@@ -679,21 +685,23 @@ class Information
     {
         // Placeholder for layout 9
         // Horizontal ships
-        placeHorizontalShip(2, 6, 5);
-        placeHorizontalShip(5, 2, 5);
-        placeHorizontalShip(8, 9, 5);
-        placeHorizontalShip(11, 4, 5);
-        placeHorizontalShip(14, 7, 5);
+        placeHorizontalShip(0, 7, 5);
+        placeHorizontalShip(2, 8, 5);
+        placeHorizontalShip(4, 9, 5);
+        placeHorizontalShip(10, 9, 5);
+        placeHorizontalShip(12, 3, 5);
+        placeHorizontalShip(14, 8, 5);
         
         // Vertical ships
+        placeVerticalShip(2, 0, 5);
+        placeVerticalShip(10, 1, 5);
+        placeVerticalShip(1, 2, 5);
+        placeVerticalShip(7, 3, 5);
         placeVerticalShip(0, 4, 5);
-        placeVerticalShip(3, 8, 5);
-        placeVerticalShip(6, 12, 5);
-        placeVerticalShip(9, 2, 5);
-        placeVerticalShip(12, 10, 5);
+        placeVerticalShip(5, 7, 5);
     }
     
-    // Setup layout 10 ship positions
+    // Setup layout 10 ship positions  - on this rn
     public void setupLayout10()
     {
         // Placeholder for layout 10
