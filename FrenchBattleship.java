@@ -59,6 +59,8 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 // This is the class that sets the JFrames size, it's location and then 
 // it setsResizable to false. - Made by Jason
@@ -490,7 +492,7 @@ class Information
    
         }
         
-        }
+    }
     
     // Helper method to place a horizontal ship
     public void placeHorizontalShip(int row, int startCol, int length)
@@ -701,23 +703,25 @@ class Information
         placeVerticalShip(5, 7, 5);
     }
     
-    // Setup layout 10 ship positions  - on this rn
+    // Setup layout 10 ship positions
     public void setupLayout10()
     {
         // Placeholder for layout 10
         // Horizontal ships
-        placeHorizontalShip(1, 8, 5);
-        placeHorizontalShip(4, 3, 5);
-        placeHorizontalShip(7, 11, 5);
-        placeHorizontalShip(10, 2, 5);
-        placeHorizontalShip(13, 9, 5);
+        placeHorizontalShip(1, 6, 5);
+        placeHorizontalShip(4, 6, 5);
+        placeHorizontalShip(8, 10, 5);
+        placeHorizontalShip(10, 10, 5);
+        placeHorizontalShip(12, 9, 5);
+        placeHorizontalShip(14, 2, 5);
         
         // Vertical ships
-        placeVerticalShip(2, 5, 5);
-        placeVerticalShip(5, 9, 5);
-        placeVerticalShip(8, 3, 5);
-        placeVerticalShip(9, 7, 5);
-        placeVerticalShip(11, 13, 5);
+        placeVerticalShip(3, 1, 5);
+        placeVerticalShip(7, 3, 5);
+        placeVerticalShip(1, 4, 5);
+        placeVerticalShip(6, 6, 5);
+        placeVerticalShip(5, 8, 5);
+        placeVerticalShip(2, 12, 5);
     }
     
     // Setup layout 11 ship positions
@@ -725,18 +729,20 @@ class Information
     {
         // Placeholder for layout 11
         // Horizontal ships
-        placeHorizontalShip(0, 9, 5);
-        placeHorizontalShip(3, 4, 5);
-        placeHorizontalShip(6, 8, 5);
-        placeHorizontalShip(9, 3, 5);
-        placeHorizontalShip(12, 11, 5);
+        placeHorizontalShip(0, 1, 5);
+        placeHorizontalShip(2, 0, 5);
+        placeHorizontalShip(6, 7, 5);
+        placeHorizontalShip(8, 10, 5);
+        placeHorizontalShip(9, 5, 5);
+        placeHorizontalShip(12, 10, 5);
         
         // Vertical ships
-        placeVerticalShip(1, 3, 5);
-        placeVerticalShip(4, 7, 5);
-        placeVerticalShip(7, 1, 5);
-        placeVerticalShip(10, 6, 5);
-        placeVerticalShip(11, 10, 5);
+        placeVerticalShip(6, 1, 5);
+        placeVerticalShip(10, 3, 5);
+        placeVerticalShip(4, 4, 5);
+        placeVerticalShip(0, 7, 5);
+        placeVerticalShip(10, 8, 5);
+        placeVerticalShip(0, 12, 5);
     }
     
     // Setup layout 12 ship positions
@@ -744,10 +750,11 @@ class Information
     {
         // Placeholder for layout 12
         // Horizontal ships
-        placeHorizontalShip(2, 7, 5);
-        placeHorizontalShip(5, 3, 5);
-        placeHorizontalShip(8, 10, 5);
-        placeHorizontalShip(11, 5, 5);
+        placeHorizontalShip(0, 2, 5);
+        placeHorizontalShip(1, 10, 5);
+        placeHorizontalShip(3, 10, 5);
+        placeHorizontalShip(8, 5, 5);
+        placeHorizontalShip(13, 10, 5);
         placeHorizontalShip(14, 2, 5);
         
         // Vertical ships
@@ -1365,22 +1372,29 @@ class BattleshipLayoutPanel extends JPanel
 }
 
 /* 
-* FrenchQuestionPanel displays French questions and evaluates user answers
-* - Jeet
-*/
+ * FrenchQuestionPanel displays French questions and evaluates user answers
+ * - Jeet
+ */
 class FrenchQuestionPanel extends JPanel 
 {
     private FrenchBattleshipHolder panelCards;
     private Information info;
     private CardLayout cards;
     private TimerPanel timerPanel;
-    
+
     private JTextField answerField; // answer field for user
     private String correctAnswer; // String of the correct answer
     private JLabel feedbackLabel; // the feedback to give back to user
     private Timer timer; // timer
     private int seconds; // running seconds
     private JLabel timerLabel; // label of running timer
+    private JButton continueButton;
+    
+    private List<String> questions = new ArrayList<>();
+    private List<String> answers = new ArrayList<>();
+    private int currentQuestionIndex;
+    private JLabel questionLabel;
+
 
     public FrenchQuestionPanel(FrenchBattleshipHolder ph, CardLayout cl, Information infoIn) 
     {
@@ -1410,7 +1424,7 @@ class FrenchQuestionPanel extends JPanel
         /// lots of junk to fix & organize later.
         JPanel questionPanel = new JPanel();
         questionPanel.setBackground(Color.CYAN);
-        JLabel questionLabel = new JLabel("Fill in the blank: Savez vous __________");
+        questionLabel = new JLabel("Fill in the blank: Savez vous __________");
         questionLabel.setFont(new Font("Arial", Font.BOLD, 36));
         questionPanel.add(questionLabel);
 
@@ -1422,64 +1436,93 @@ class FrenchQuestionPanel extends JPanel
 
         JPanel answerPanel = new JPanel();
         answerPanel.setBackground(Color.CYAN);
-        JLabel answerLabel = new JLabel("Your Answer: Bonjour");
+        JLabel answerLabel = new JLabel("Your Answer: ");
         answerLabel.setFont(new Font("Arial", Font.BOLD, 36));
         answerPanel.add(answerLabel);
-
+        answerField = new JTextField(20);
+        answerPanel.add(answerField);
         centerPanel.add(answerPanel);
 
         JPanel feedbackPanel = new JPanel();
         feedbackPanel.setBackground(Color.CYAN);
-        JLabel incorrectLabel = new JLabel("Your Answer was ");
-        incorrectLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        feedbackPanel.add(incorrectLabel);
-
-        JLabel incorrectHighlightLabel = new JLabel("incorrect");
-        incorrectHighlightLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        incorrectHighlightLabel.setForeground(Color.RED);
-        feedbackPanel.add(incorrectHighlightLabel);
-
-        JLabel answerWasLabel = new JLabel(" the answer was actually *");
-        answerWasLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        feedbackPanel.add(answerWasLabel);
-
-        JLabel correctAnswerLabel = new JLabel("comment");
-        correctAnswerLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        correctAnswerLabel.setForeground(Color.GREEN);
-        feedbackPanel.add(correctAnswerLabel);
-
-        JLabel closingStarLabel = new JLabel("*");
-        closingStarLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        feedbackPanel.add(closingStarLabel);
-
+        feedbackLabel = new JLabel("");
+        feedbackLabel.setFont(new Font("Arial", Font.BOLD, 36));
+        feedbackPanel.add(feedbackLabel);
         centerPanel.add(feedbackPanel);
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.setBackground(Color.CYAN);
 
-        JButton continueButton = new JButton("Continue");
+        JButton checkAnswerButton = new JButton("Check Answer");
+        checkAnswerButton.setFont(new Font("Arial", Font.BOLD, 20));
+        checkAnswerButton.addActionListener(new CheckAnswerButtonListener());
+        buttonPanel.add(checkAnswerButton);
+
+        continueButton = new JButton("Continue");
         continueButton.setFont(new Font("Arial", Font.BOLD, 20));
         continueButton.addActionListener(new ContinueButtonListener());
+        continueButton.setEnabled(false);
         buttonPanel.add(continueButton);
 
         add(topPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
+
+        loadQuestionsAndAnswers();
+        loadQuestion();
     }
+
+    private int coins = 500; // Starting coins
+
+    class CheckAnswerButtonListener implements ActionListener 
+    {
+        public void actionPerformed(ActionEvent evt) 
+        {
+            String userAnswer = answerField.getText().toLowerCase();
+            if (userAnswer.equals(correctAnswer.toLowerCase())) 
+            {
+                feedbackLabel.setText("Your answer was correct! You get 50 coins.");
+                feedbackLabel.setForeground(Color.GREEN);
+                coins += 50;
+            } 
+            else 
+            {
+                feedbackLabel.setText("Unfortunately your answer was incorrect.");
+                feedbackLabel.setForeground(Color.RED);
+            }
+            
+            continueButton.setEnabled(true);
+        }
+    }
+    
 
     /* Continues onto the AttackPanel */ 
     class ContinueButtonListener implements ActionListener 
     {
         public void actionPerformed(ActionEvent evt) 
         {
-            cards.show(panelCards, "Attack");
+            String userAnswer = answerField.getText().toLowerCase();
+            if (userAnswer.equals(correctAnswer.toLowerCase())) 
+            {
+                feedbackLabel.setText("Your answer was correct. You get 50 coins and a chance to attack.");
+                feedbackLabel.setForeground(Color.GREEN);
+                loadQuestion();
+                cards.show(panelCards, "Attack");
+            } 
+            else 
+            {
+                feedbackLabel.setText("Unfortunately your answer was incorrect. You lose your chance to attack. Better luck next time!");
+                feedbackLabel.setForeground(Color.RED);
+                loadQuestion();
+                cards.show(panelCards, "ComputersTurn");
+            }
         }
     }
 
     /* This panel displays a black box with the timer text
      * It uses paintComponent to draw the background - Jason
      */
-    class TimerPanel extends JPanel
+    public class TimerPanel extends JPanel
     {
         public TimerPanel()
         {
@@ -1498,7 +1541,7 @@ class FrenchQuestionPanel extends JPanel
     /* This listener updates the timer text every second
      * It increments the seconds counter and updates the label - Jason
      */
-    class TimerListener implements ActionListener
+    public class TimerListener implements ActionListener
     {
         public void actionPerformed(ActionEvent evt)
         {
@@ -1506,7 +1549,45 @@ class FrenchQuestionPanel extends JPanel
             timerLabel.setText("Time: " + seconds + "s");
         }
     }
+
+    public void loadQuestionsAndAnswers() 
+    {
+        try 
+        {
+            Scanner questionScanner = new Scanner(new File("questions.txt"));
+            Scanner answerScanner = new Scanner(new File("answers.txt"));
+
+            while (questionScanner.hasNextLine() && answerScanner.hasNextLine()) 
+            {
+                questions.add(questionScanner.nextLine());
+                answers.add(answerScanner.nextLine());
+            }
+
+            questionScanner.close();
+            answerScanner.close();
+            
+        } 
+        catch (FileNotFoundException evt) 
+        {
+            System.out.println("Error loading questions/answers: " + evt);
+        }
+    }
+
+    public void loadQuestion() 
+    {
+        if (questions.size() > 0) 
+        {
+            currentQuestionIndex = (int)(Math.random() * questions.size());
+            String question = questions.get(currentQuestionIndex);
+            correctAnswer = answers.get(currentQuestionIndex);
+
+            // Update the question label
+            questionLabel.setText(question);
+            feedbackLabel.setText(""); // Clear previous feedback
+        }
+    }
 }
+
 
 /* 
 * This is the Attack Panel, where the user is able to choose a point to 
@@ -2090,6 +2171,101 @@ class YouLosePanel extends JPanel
         public void actionPerformed(ActionEvent evt) 
         {
             cards.show(panelCards, "First");
+        }
+    }
+}
+
+/* 
+ * ComputersTurnPanel handles the computer's turn when the player answers incorrectly.
+ * It shows a random attack on the player's grid. - Jason
+ */
+class ComputersTurnPanel extends JPanel 
+{
+    private FrenchBattleshipHolder panelCards;
+    private CardLayout cards;
+    private Timer timer;
+    private JLabel messageLabel;
+    private JButton[][] gridButtons; // 2d array for the grid + buttons
+
+    public ComputersTurnPanel(FrenchBattleshipHolder ph, CardLayout cl, Information infoIn) 
+    {
+        panelCards = ph;
+        cards = cl;
+        
+        setBackground(Color.CYAN);
+        setLayout(new BorderLayout());
+
+        // Create message panel
+        JPanel messagePanel = new JPanel();
+        messagePanel.setBackground(Color.CYAN);
+        messageLabel = new JLabel("Computer is attacking...");
+        messageLabel.setFont(new Font("Arial", Font.BOLD, 36));
+        messagePanel.add(messageLabel);
+        add(messagePanel, BorderLayout.NORTH);
+
+        // Create continue button
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.CYAN);
+        JButton continueButton = new JButton("Continue");
+        continueButton.setFont(new Font("Arial", Font.BOLD, 20));
+        continueButton.addActionListener(new ContinueButtonListener());
+        buttonPanel.add(continueButton);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        int row = (int)(Math.random() * 15);
+        int col = (int)(Math.random() * 15);
+        messageLabel.setText("Computer attacked position: " + (char)('A' + row) + (col + 1));
+        
+         // Create grid panel with 15x15 buttons
+        JPanel gridPanel = new JPanel(new GridLayout(15, 15, 2, 2));
+        gridPanel.setBackground(Color.CYAN);
+        gridButtons = new JButton[15][15];
+
+        for(int i = 0; i < 15; i++) 
+        {
+            for(int j = 0; j < 15; j++) 
+            {
+                gridButtons[i][j] = new JButton();
+                gridButtons[i][j].setPreferredSize(new Dimension(30, 30));
+                gridButtons[i][j].setBackground(Color.WHITE);
+                gridPanel.add(gridButtons[i][j]);
+            }
+        }
+        
+         // Create center panel to hold the grid
+        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        centerPanel.setBackground(Color.CYAN);
+        centerPanel.add(gridPanel);
+
+        // Create bottom panel with Continue and Shop buttons
+        buttonPanel = new JPanel(new GridLayout(2, 1, 5, 5));
+        buttonPanel.setBackground(Color.CYAN);
+
+        continueButton = new JButton("Continue");
+        continueButton.setFont(new Font("Arial", Font.BOLD, 20));
+        continueButton.addActionListener(new ContinueButtonListener());
+        continueButton.setEnabled(false);
+        buttonPanel.add(continueButton);
+        
+         // Add all panels to the main layout
+        add(centerPanel, BorderLayout.CENTER);
+    }
+
+    // When panel becomes visible, start the attack animation
+    public void setVisible(boolean visible) 
+    {
+        super.setVisible(visible);
+        if (visible) 
+        {
+            timer.start();
+        }
+    }
+
+    class ContinueButtonListener implements ActionListener 
+    {
+        public void actionPerformed(ActionEvent evt) 
+        {
+            cards.show(panelCards, "FrenchQuestion");
         }
     }
 }
