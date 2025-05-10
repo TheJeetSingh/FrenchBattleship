@@ -1487,7 +1487,8 @@ class FrenchQuestionPanel extends JPanel
             } 
             else 
             {
-                feedbackLabel.setText("Unfortunately your answer was incorrect.");
+                feedbackLabel.setText("Incorrect. " +
+					"The correct answer was \"" + correctAnswer + "\"");
                 feedbackLabel.setForeground(Color.RED);
             }
             
@@ -1575,7 +1576,7 @@ class FrenchQuestionPanel extends JPanel
 
     public void loadQuestion() 
     {
-        if (questions.size() > 0) 
+        if (questions.size() > 0) // so an error doesnt happen 
         {
             currentQuestionIndex = (int)(Math.random() * questions.size());
             String question = questions.get(currentQuestionIndex);
@@ -1722,26 +1723,25 @@ class AttackPanel extends JPanel
             // Record this hit
             info.recordHit(row, col);
             
+            // Use the button directly from the gridButtons array
+            JButton buttonToModify = gridButtons[row][col];
+            
             // Check if there's a ship at this position
             if (info.isShipAt(row, col)) 
             {
                 // Hit a ship - mark red and change button appearance
-                JButton button = (JButton)evt.getSource();
-                button.setBackground(Color.RED);
-                button.setBorder(BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-                button.setForeground(Color.WHITE);
-                button.setText("HIT");
+                buttonToModify.setBackground(Color.RED);
+                buttonToModify.setForeground(Color.RED);
+                buttonToModify.setText("HIT");
                 statusLabel.setText("HIT! You found a ship at position (" + (row+1) + "," + (col+1) + ")!");
                 statusLabel.setForeground(Color.RED);
             } 
             else 
             {
                 // Missed - mark blue and change button appearance
-                JButton button = (JButton)evt.getSource();
-                button.setBackground(Color.BLUE);
-                button.setBorder(BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                button.setForeground(Color.WHITE);
-                button.setText("MISS");
+                buttonToModify.setBackground(Color.BLUE);
+                buttonToModify.setForeground(Color.BLUE);
+                buttonToModify.setText("MISS");
                 statusLabel.setText("MISS! No ship at position (" + (row+1) + "," + (col+1) + ")");
                 statusLabel.setForeground(Color.BLUE);
             }
